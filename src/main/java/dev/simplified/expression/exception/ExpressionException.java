@@ -1,25 +1,19 @@
 package dev.sbs.api.expression.exception;
 
-import dev.sbs.api.expression.Expression;
-import dev.sbs.api.expression.shuntingyard.ShuntingYard;
-import dev.sbs.api.expression.tokenizer.Tokenizer;
 import org.intellij.lang.annotations.PrintFormat;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Thrown when a mathematical expression is invalid, cannot be parsed, or is
- * configured with incorrect arguments.
- * <p>
- * This covers structural errors such as empty expressions, mismatched parentheses,
- * invalid operator symbols, variable/function name conflicts, unparseable characters,
- * and incorrect argument counts.
+ * Thrown when the expression evaluator encounters a parsing, evaluation,
+ * or operator error.
  *
- * @see Expression
- * @see ShuntingYard
- * @see Tokenizer
+ * @see InvalidExpressionException
+ * @see EvaluationException
+ * @see UnknownFunctionException
+ * @see UnknownOperatorException
  */
-public final class ExpressionException extends MathException {
+public class ExpressionException extends RuntimeException {
 
     /**
      * Constructs a new {@code ExpressionException} with the specified cause.
@@ -46,7 +40,7 @@ public final class ExpressionException extends MathException {
      * @param message the detail message
      */
     public ExpressionException(@NotNull Throwable cause, @NotNull String message) {
-        super(cause, message);
+        super(message, cause);
     }
 
     /**
@@ -56,7 +50,7 @@ public final class ExpressionException extends MathException {
      * @param args the format arguments
      */
     public ExpressionException(@NotNull @PrintFormat String message, @Nullable Object... args) {
-        super(message, args);
+        super(String.format(message, args));
     }
 
     /**
@@ -67,7 +61,7 @@ public final class ExpressionException extends MathException {
      * @param args the format arguments
      */
     public ExpressionException(@NotNull Throwable cause, @NotNull @PrintFormat String message, @Nullable Object... args) {
-        super(cause, message, args);
+        super(String.format(message, args), cause);
     }
 
 }

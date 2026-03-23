@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
  * @see Tokenizer
  */
 @Getter
-public final class UnknownFunctionException extends MathException {
+public final class UnknownFunctionException extends ExpressionException {
 
     /** The full expression string that was being tokenized. */
     private final @NotNull String expression;

@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
  * @see BuiltinOperator
  * @see BuiltinFunction
  */
-public final class EvaluationException extends MathException {
+public final class EvaluationException extends ExpressionException {
 
     /**
      * Constructs a new {@code EvaluationException} with the specified cause.
