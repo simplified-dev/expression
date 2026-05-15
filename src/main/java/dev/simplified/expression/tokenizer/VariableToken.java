@@ -1,5 +1,6 @@
 package dev.simplified.expression.tokenizer;
 
+import dev.simplified.expression.Expression;
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
@@ -8,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * Variable names are resolved by the {@link Tokenizer} against a caller-supplied
  * set of known variable names. At evaluation time the
- * {@link dev.simplified.expression.Expression Expression} substitutes the variable's
+ * {@link Expression Expression} substitutes the variable's
  * current value.
  *
  * @see Token#TOKEN_VARIABLE
@@ -17,7 +18,9 @@ import org.jetbrains.annotations.NotNull;
 @Getter
 public class VariableToken extends Token {
 
-    /** The name of the variable this token references. */
+    /**
+     * The name of the variable this token references.
+     */
     private final @NotNull String name;
 
     /**

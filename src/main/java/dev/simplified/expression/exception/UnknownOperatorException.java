@@ -16,13 +16,19 @@ import org.jetbrains.annotations.NotNull;
 @Getter
 public final class UnknownOperatorException extends ExpressionException {
 
-    /** The full expression string that was being tokenized. */
+    /**
+     * The full expression string that was being tokenized.
+     */
     private final @NotNull String expression;
 
-    /** The unrecognized token text extracted from the expression. */
+    /**
+     * The unrecognized token text extracted from the expression.
+     */
     private final @NotNull String token;
 
-    /** The zero-based character position where the unrecognized token begins. */
+    /**
+     * The zero-based character position where the unrecognized token begins.
+     */
     private final int position;
 
     /**

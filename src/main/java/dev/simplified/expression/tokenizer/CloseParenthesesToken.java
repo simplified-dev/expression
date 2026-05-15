@@ -15,12 +15,14 @@
  */
 package dev.simplified.expression.tokenizer;
 
+import dev.simplified.expression.shuntingyard.ShuntingYard;
+
 /**
  * Token representing a close parenthesis, bracket, or brace in a mathematical expression.
  * <p>
  * The {@link Tokenizer} emits this token when it encounters a {@code ')'},
  * {@code ']'}, or {@code '}'} character. All three variants are treated
- * identically by the {@link dev.simplified.expression.shuntingyard.ShuntingYard ShuntingYard}
+ * identically by the {@link ShuntingYard ShuntingYard}
  * algorithm.
  *
  * @see Token#TOKEN_PARENTHESES_CLOSE

@@ -40,28 +40,44 @@ import java.util.Set;
  */
 public class Tokenizer {
 
-    /** The expression being tokenized, stored as a character array. */
+    /**
+     * The expression being tokenized, stored as a character array.
+     */
     private final char @NotNull [] expression;
 
-    /** The total length of the expression character array. */
+    /**
+     * The total length of the expression character array.
+     */
     private final int expressionLength;
 
-    /** User-defined functions available during tokenization, keyed by name. */
+    /**
+     * User-defined functions available during tokenization, keyed by name.
+     */
     private final @Nullable Map<String, MathFunction> userFunctions;
 
-    /** User-defined operators available during tokenization, keyed by symbol. */
+    /**
+     * User-defined operators available during tokenization, keyed by symbol.
+     */
     private final @Nullable Map<String, MathOperator> userOperators;
 
-    /** The set of valid variable names that may appear in the expression. */
+    /**
+     * The set of valid variable names that may appear in the expression.
+     */
     private final @Nullable Set<String> variableNames;
 
-    /** Whether implicit multiplication insertion is enabled. */
+    /**
+     * Whether implicit multiplication insertion is enabled.
+     */
     private final boolean implicitMultiplication;
 
-    /** The current character position within the expression array. */
+    /**
+     * The current character position within the expression array.
+     */
     private int pos = 0;
 
-    /** The most recently returned token, used for context-sensitive parsing. */
+    /**
+     * The most recently returned token, used for context-sensitive parsing.
+     */
     private @Nullable Token lastToken;
 
     /**

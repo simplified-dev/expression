@@ -55,17 +55,25 @@ import java.util.concurrent.Future;
 @SuppressWarnings("all")
 public class Expression {
 
-    /** The compiled token sequence in reverse polish notation. */
+    /**
+     * The compiled token sequence in reverse polish notation.
+     */
     private final @NotNull Token[] tokens;
 
-    /** The mutable variable-name-to-value bindings used during evaluation. */
+    /**
+     * The mutable variable-name-to-value bindings used during evaluation.
+     */
     @Getter
     private final @NotNull Map<String, Double> variables;
 
-    /** The names of user-defined functions, used to prevent variable/function name collisions. */
+    /**
+     * The names of user-defined functions, used to prevent variable/function name collisions.
+     */
     private final @NotNull Set<String> userFunctionNames;
 
-    /** An optional callback that supplies variable values on demand during evaluation. */
+    /**
+     * An optional callback that supplies variable values on demand during evaluation.
+     */
     @Getter
     @Setter
     private @Nullable VariableProvider variableProvider;
@@ -590,19 +598,29 @@ public class Expression {
      */
     public static final class Builder {
 
-        /** The raw infix expression string to be parsed. */
+        /**
+         * The raw infix expression string to be parsed.
+         */
         private final @NotNull String expression;
 
-        /** User-registered functions keyed by name. */
+        /**
+         * User-registered functions keyed by name.
+         */
         private final @NotNull Map<String, MathFunction> userFunctions;
 
-        /** User-registered operators keyed by symbol. */
+        /**
+         * User-registered operators keyed by symbol.
+         */
         private final @NotNull Map<String, MathOperator> userOperators;
 
-        /** Declared variable names that the expression may reference. */
+        /**
+         * Declared variable names that the expression may reference.
+         */
         private final @NotNull Set<String> variableNames;
 
-        /** Whether implicit multiplication is enabled (e.g. {@code 2x} treated as {@code 2*x}). */
+        /**
+         * Whether implicit multiplication is enabled (e.g. {@code 2x} treated as {@code 2*x}).
+         */
         private boolean implicitMultiplication = true;
 
         /**

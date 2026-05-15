@@ -23,28 +23,44 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public abstract class Token {
 
-    /** Type constant for numeric literal tokens. */
+    /**
+     * Type constant for numeric literal tokens.
+     */
     public static final short TOKEN_NUMBER = 1;
 
-    /** Type constant for operator tokens. */
+    /**
+     * Type constant for operator tokens.
+     */
     public static final short TOKEN_OPERATOR = 2;
 
-    /** Type constant for function tokens. */
+    /**
+     * Type constant for function tokens.
+     */
     public static final short TOKEN_FUNCTION = 3;
 
-    /** Type constant for open-parenthesis tokens. */
+    /**
+     * Type constant for open-parenthesis tokens.
+     */
     public static final short TOKEN_PARENTHESES_OPEN = 4;
 
-    /** Type constant for close-parenthesis tokens. */
+    /**
+     * Type constant for close-parenthesis tokens.
+     */
     public static final short TOKEN_PARENTHESES_CLOSE = 5;
 
-    /** Type constant for variable tokens. */
+    /**
+     * Type constant for variable tokens.
+     */
     public static final short TOKEN_VARIABLE = 6;
 
-    /** Type constant for argument-separator tokens (commas). */
+    /**
+     * Type constant for argument-separator tokens (commas).
+     */
     public static final short TOKEN_SEPARATOR = 7;
 
-    /** The type constant identifying the kind of this token. */
+    /**
+     * The type constant identifying the kind of this token.
+     */
     private final int type;
 
 }

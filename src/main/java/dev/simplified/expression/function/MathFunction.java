@@ -24,13 +24,19 @@ import org.jetbrains.annotations.Nullable;
 @Getter
 public abstract class MathFunction implements VarargFunction<Double, Double> {
 
-    /** The name of this function, used to reference it in expressions. */
+    /**
+     * The name of this function, used to reference it in expressions.
+     */
     private final @NotNull String name;
 
-    /** The minimum number of arguments this function accepts. */
+    /**
+     * The minimum number of arguments this function accepts.
+     */
     protected final int minArguments;
 
-    /** The maximum number of arguments this function accepts. */
+    /**
+     * The maximum number of arguments this function accepts.
+     */
     protected final int maxArguments;
 
     /**

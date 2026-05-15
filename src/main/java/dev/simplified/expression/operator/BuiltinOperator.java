@@ -23,16 +23,24 @@ import java.util.function.Function;
 @Getter
 public enum BuiltinOperator {
 
-    /** Binary addition: {@code a + b}. */
+    /**
+     * Binary addition: {@code a + b}.
+     */
     ADDITION("+", 2, true, MathOperator.PRECEDENCE_ADDITION, args -> args[0] + args[1]),
 
-    /** Binary subtraction: {@code a - b}. */
+    /**
+     * Binary subtraction: {@code a - b}.
+     */
     SUBTRACTION("-", 2, true, MathOperator.PRECEDENCE_ADDITION, args -> args[0] - args[1]),
 
-    /** Binary multiplication: {@code a * b}. */
+    /**
+     * Binary multiplication: {@code a * b}.
+     */
     MULTIPLICATION("*", 2, true, MathOperator.PRECEDENCE_MULTIPLICATION, args -> args[0] * args[1]),
 
-    /** Binary division: {@code a / b}. Throws {@link EvaluationException} if the divisor is zero. */
+    /**
+     * Binary division: {@code a / b}. Throws {@link EvaluationException} if the divisor is zero.
+     */
     DIVISION("/", 2, true, MathOperator.PRECEDENCE_DIVISION, args -> {
         if (args[1] == 0d)
             throw new EvaluationException("Division by zero in division");
@@ -40,10 +48,14 @@ public enum BuiltinOperator {
         return args[0] / args[1];
     }),
 
-    /** Binary exponentiation: {@code a ^ b}. Right-associative. */
+    /**
+     * Binary exponentiation: {@code a ^ b}. Right-associative.
+     */
     POWER("^", 2, false, MathOperator.PRECEDENCE_POWER, args -> Math.pow(args[0], args[1])),
 
-    /** Binary modulo: {@code a % b}. Throws {@link EvaluationException} if the divisor is zero. */
+    /**
+     * Binary modulo: {@code a % b}. Throws {@link EvaluationException} if the divisor is zero.
+     */
     MODULO("%", 2, true, MathOperator.PRECEDENCE_MODULO, args -> {
         if (args[1] == 0d)
             throw new EvaluationException("Division by zero in modulo");
@@ -51,16 +63,24 @@ public enum BuiltinOperator {
         return args[0] % args[1];
     }),
 
-    /** Unary minus: {@code -a}. Right-associative. */
+    /**
+     * Unary minus: {@code -a}. Right-associative.
+     */
     UNARY_MINUS("-", 1, false, MathOperator.PRECEDENCE_UNARY_MINUS, args -> -args[0]),
 
-    /** Unary plus: {@code +a}. Right-associative. */
+    /**
+     * Unary plus: {@code +a}. Right-associative.
+     */
     UNARY_PLUS("+", 1, false, MathOperator.PRECEDENCE_UNARY_PLUS, args -> args[0]);
 
-    /** Cached array of all enum values for efficient iteration. */
+    /**
+     * Cached array of all enum values for efficient iteration.
+     */
     private static final @NotNull BuiltinOperator[] VALUES = values();
 
-    /** The underlying {@link MathOperator} instance that performs the computation. */
+    /**
+     * The underlying {@link MathOperator} instance that performs the computation.
+     */
     private final @NotNull MathOperator actual;
 
     /**

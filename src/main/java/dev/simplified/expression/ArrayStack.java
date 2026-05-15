@@ -2,10 +2,12 @@ package dev.simplified.expression;
 
 import dev.simplified.expression.exception.InvalidExpressionException;
 
+import java.util.Stack;
+
 /**
  * A lightweight stack of primitive {@code double} values backed by a resizable array.
  * <p>
- * This class provides a more memory-efficient alternative to {@link java.util.Stack}{@code <Double>}
+ * This class provides a more memory-efficient alternative to {@link Stack}{@code <Double>}
  * by avoiding autoboxing overhead. The internal array grows automatically by 20% plus one element
  * when capacity is exceeded.
  * <p>
@@ -16,10 +18,14 @@ import dev.simplified.expression.exception.InvalidExpressionException;
  */
 class ArrayStack {
 
-    /** The backing array that stores the stack elements. */
+    /**
+     * The backing array that stores the stack elements.
+     */
     private double[] data;
 
-    /** The index of the top element, or {@code -1} if the stack is empty. */
+    /**
+     * The index of the top element, or {@code -1} if the stack is empty.
+     */
     private int idx;
 
     /**

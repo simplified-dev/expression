@@ -22,44 +22,70 @@ import org.jetbrains.annotations.NotNull;
 @Getter
 public abstract class MathOperator implements VarargFunction<Double, Double> {
 
-    /** The precedence value for the addition operation. */
+    /**
+     * The precedence value for the addition operation.
+     */
     public static final int PRECEDENCE_ADDITION = 500;
 
-    /** The precedence value for the subtraction operation (equal to {@link #PRECEDENCE_ADDITION}). */
+    /**
+     * The precedence value for the subtraction operation (equal to {@link #PRECEDENCE_ADDITION}).
+     */
     public static final int PRECEDENCE_SUBTRACTION = PRECEDENCE_ADDITION;
 
-    /** The precedence value for the multiplication operation. */
+    /**
+     * The precedence value for the multiplication operation.
+     */
     public static final int PRECEDENCE_MULTIPLICATION = 1000;
 
-    /** The precedence value for the division operation (equal to {@link #PRECEDENCE_MULTIPLICATION}). */
+    /**
+     * The precedence value for the division operation (equal to {@link #PRECEDENCE_MULTIPLICATION}).
+     */
     public static final int PRECEDENCE_DIVISION = PRECEDENCE_MULTIPLICATION;
 
-    /** The precedence value for the modulo operation (equal to {@link #PRECEDENCE_DIVISION}). */
+    /**
+     * The precedence value for the modulo operation (equal to {@link #PRECEDENCE_DIVISION}).
+     */
     public static final int PRECEDENCE_MODULO = PRECEDENCE_DIVISION;
 
-    /** The precedence value for the power/exponentiation operation. */
+    /**
+     * The precedence value for the power/exponentiation operation.
+     */
     public static final int PRECEDENCE_POWER = 10000;
 
-    /** The precedence value for the unary minus operation. */
+    /**
+     * The precedence value for the unary minus operation.
+     */
     public static final int PRECEDENCE_UNARY_MINUS = 5000;
 
-    /** The precedence value for the unary plus operation (equal to {@link #PRECEDENCE_UNARY_MINUS}). */
+    /**
+     * The precedence value for the unary plus operation (equal to {@link #PRECEDENCE_UNARY_MINUS}).
+     */
     public static final int PRECEDENCE_UNARY_PLUS = PRECEDENCE_UNARY_MINUS;
 
-    /** The set of characters that are permitted as operator symbols. */
+    /**
+     * The set of characters that are permitted as operator symbols.
+     */
     public static final char[] ALLOWED_OPERATOR_CHARS = { '+', '-', '*', '/', '%', '^', '!', '#', '§',
         '$', '&', ';', ':', '~', '<', '>', '|', '=', '÷', '√', '∛', '⌈', '⌊' };
 
-    /** The number of operands this operator takes (1 for unary, 2 for binary). */
+    /**
+     * The number of operands this operator takes (1 for unary, 2 for binary).
+     */
     private final int numOperands;
 
-    /** Whether this operator is left-associative ({@code true}) or right-associative ({@code false}). */
+    /**
+     * Whether this operator is left-associative ({@code true}) or right-associative ({@code false}).
+     */
     private final boolean leftAssociative;
 
-    /** The symbol representing this operator (e.g., {@code "+"}, {@code "*"}). */
+    /**
+     * The symbol representing this operator (e.g., {@code "+"}, {@code "*"}).
+     */
     private final @NotNull String symbol;
 
-    /** The precedence value of this operator, used to determine evaluation order. */
+    /**
+     * The precedence value of this operator, used to determine evaluation order.
+     */
     private final int precedence;
 
     /**

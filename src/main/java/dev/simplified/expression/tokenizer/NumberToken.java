@@ -16,7 +16,9 @@ import org.jetbrains.annotations.NotNull;
 @Getter
 public final class NumberToken extends Token {
 
-    /** The numeric value represented by this token. */
+    /**
+     * The numeric value represented by this token.
+     */
     private final double value;
 
     /**
