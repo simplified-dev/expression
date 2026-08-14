@@ -1,9 +1,9 @@
 package dev.simplified.expression.tokenizer;
 
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.RequiredArgsConstructor;
 import dev.simplified.expression.Expression;
 import dev.simplified.expression.shuntingyard.ShuntingYard;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 
 /**
  * Abstract base class for all token types produced by the {@link Tokenizer}.

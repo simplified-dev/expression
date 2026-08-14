@@ -1,6 +1,6 @@
 package dev.simplified.expression.tokenizer;
 
-import lombok.Getter;
+import dev.simplified.annotations.Getter;
 import org.jetbrains.annotations.NotNull;
 
 /**

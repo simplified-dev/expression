@@ -1,7 +1,7 @@
 package dev.simplified.expression.operator;
 
+import dev.simplified.annotations.Getter;
 import dev.simplified.expression.function.VarargFunction;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 /**

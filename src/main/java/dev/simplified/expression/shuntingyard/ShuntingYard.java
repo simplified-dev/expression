@@ -1,5 +1,6 @@
 package dev.simplified.expression.shuntingyard;
 
+import dev.simplified.annotations.UtilityClass;
 import dev.simplified.expression.Expression;
 import dev.simplified.expression.exception.InvalidExpressionException;
 import dev.simplified.expression.function.MathFunction;
@@ -34,6 +35,7 @@ import java.util.Stack;
  * @see Expression
  * @see Expression.Builder
  */
+@UtilityClass
 public class ShuntingYard {
 
     /**

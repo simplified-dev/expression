@@ -1,8 +1,8 @@
 package dev.simplified.expression.tokenizer;
 
+import dev.simplified.annotations.Getter;
 import dev.simplified.expression.function.MathFunction;
 import dev.simplified.expression.shuntingyard.ShuntingYard;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 /**

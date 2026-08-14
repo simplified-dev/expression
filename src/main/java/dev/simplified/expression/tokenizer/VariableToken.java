@@ -1,7 +1,7 @@
 package dev.simplified.expression.tokenizer;
 
+import dev.simplified.annotations.Getter;
 import dev.simplified.expression.Expression;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 
 /**
