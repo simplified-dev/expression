@@ -1,8 +1,9 @@
 package dev.simplified.expression.operator;
 
+import dev.simplified.annotations.EnumLookup;
+import dev.simplified.annotations.Getter;
 import dev.simplified.expression.Expression;
 import dev.simplified.expression.exception.EvaluationException;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,6 +22,7 @@ import java.util.function.Function;
  * @see Expression
  */
 @Getter
+@EnumLookup
 public enum BuiltinOperator {
 
     /**
@@ -74,11 +76,6 @@ public enum BuiltinOperator {
     UNARY_PLUS("+", 1, false, MathOperator.PRECEDENCE_UNARY_PLUS, args -> args[0]);
 
     /**
-     * Cached array of all enum values for efficient iteration.
-     */
-    private static final @NotNull BuiltinOperator[] VALUES = values();
-
-    /**
      * The underlying {@link MathOperator} instance that performs the computation.
      */
     private final @NotNull MathOperator actual;
@@ -114,7 +111,7 @@ public enum BuiltinOperator {
         if (symbol == '÷')
             symbol = '/';
 
-        for (BuiltinOperator operator : VALUES) {
+        for (BuiltinOperator operator : CACHED_VALUES) {
             if (operator.getActual().getSymbol().charAt(0) == symbol) {
                 if (numArguments == operator.getActual().getNumOperands())
                     return operator.getActual();

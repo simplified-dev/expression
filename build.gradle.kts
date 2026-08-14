@@ -18,13 +18,15 @@ repositories {
 
 dependencies {
     // Simplified Libraries
-    api("com.github.simplified-dev:collections") { version { strictly("652c22d") } }
-    api("com.github.simplified-dev:utils") { version { strictly("7c2feb7") } }
+    api("com.github.simplified-dev:collections") { version { strictly("23f01b6") } }
+    api("com.github.simplified-dev:utils") { version { strictly("381e317") } }
 
     // JetBrains Annotations
     api(libs.annotations)
 
-    // Lombok Annotations
-    compileOnly(libs.lombok)
-    annotationProcessor(libs.lombok)
+    // Simplified Annotations
+    compileOnly(libs.simplified.annotations)
+    annotationProcessor(libs.simplified.annotations)
+    testCompileOnly(libs.simplified.annotations)
+    testAnnotationProcessor(libs.simplified.annotations)
 }

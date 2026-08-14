@@ -1,8 +1,8 @@
 package dev.simplified.expression.function;
 
+import dev.simplified.annotations.Getter;
 import dev.simplified.expression.Expression;
 import dev.simplified.expression.exception.InvalidExpressionException;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

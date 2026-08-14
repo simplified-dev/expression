@@ -1,10 +1,11 @@
 package dev.simplified.expression.function;
 
+import dev.simplified.annotations.EnumLookup;
+import dev.simplified.annotations.Getter;
 import dev.simplified.expression.Expression;
 import dev.simplified.expression.exception.EvaluationException;
 import dev.simplified.util.ArrayUtil;
 import dev.simplified.util.NumberUtil;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
  * @see Expression
  */
 @Getter
+@EnumLookup
 public enum BuiltinFunction {
 
     /**
@@ -280,11 +282,6 @@ public enum BuiltinFunction {
     ROUND_DOWN("rounddown", 1, args -> (double) NumberUtil.roundDown(args[0], args[1].intValue()));
 
     /**
-     * Cached array of all enum values for efficient iteration.
-     */
-    private static final BuiltinFunction[] VALUES = values();
-
-    /**
      * The underlying {@link MathFunction} instance that performs the computation.
      */
     private final @NotNull MathFunction actual;
@@ -324,7 +321,7 @@ public enum BuiltinFunction {
      * @return the matching {@link MathFunction}, or {@code null} if no builtin function matches
      */
     public static @Nullable MathFunction get(@NotNull String name) {
-        for (BuiltinFunction function : VALUES) {
+        for (BuiltinFunction function : CACHED_VALUES) {
             if (function.getActual().getName().equalsIgnoreCase(name))
                 return function.getActual();
         }

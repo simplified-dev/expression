@@ -1,5 +1,7 @@
 package dev.simplified.expression;
 
+import dev.simplified.annotations.Getter;
+import dev.simplified.annotations.Setter;
 import dev.simplified.expression.exception.InvalidExpressionException;
 import dev.simplified.expression.function.BuiltinFunction;
 import dev.simplified.expression.function.MathFunction;
@@ -11,8 +13,6 @@ import dev.simplified.expression.tokenizer.NumberToken;
 import dev.simplified.expression.tokenizer.OperatorToken;
 import dev.simplified.expression.tokenizer.Token;
 import dev.simplified.expression.tokenizer.VariableToken;
-import lombok.Getter;
-import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
