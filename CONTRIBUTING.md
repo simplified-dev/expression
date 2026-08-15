@@ -46,7 +46,7 @@ Thank you for your interest in contributing! This document covers everything you
 
    > On Windows, use `gradlew.bat build` instead.
 
-4. **Open** the project in your IDE. IntelliJ IDEA is recommended - it will automatically detect the Gradle project and configure itself. Make sure the Lombok plugin is installed and annotation processing is enabled.
+4. **Open** the project in your IDE. IntelliJ IDEA is recommended - it will automatically detect the Gradle project and configure itself. Make sure the Simplified Annotations plugin is installed and annotation processing is enabled.
 
 ## Making Changes
 
@@ -65,7 +65,7 @@ All development is based on the `master` branch.
 ### Code Style
 
 - Follow standard Java conventions (Oracle Code Conventions).
-- Use [Lombok](https://projectlombok.org/) annotations where appropriate to reduce boilerplate.
+- Use [Simplified Annotations](https://github.com/simplified-dev/annotations) where appropriate to reduce boilerplate.
 - Use [JetBrains annotations](https://www.jetbrains.com/help/idea/annotating-source-code.html) (`@NotNull`, `@Nullable`) for nullability.
 - Target **Java 21** - use modern language features (records, sealed classes, pattern matching) where they improve clarity.
 - Keep methods focused and classes cohesive. Prefer small, well-named methods over large ones.
